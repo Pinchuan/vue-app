@@ -1,0 +1,20 @@
+<div class="viewContent">
+    <div class="mainContent" v-show="showMain">
+        <main-view></main-view>
+        <mt-tabbar v-show="!showUpLoadBtn" v-model="selected" fixed>
+            <mt-tab-item v-for="(item,index) in footerArr" :id="item.id">
+                <!--<img slot="icon" :src="item.img">-->
+                <i class="icon iconfont iconSize" :class="item.class"></i>
+                {{ item.text }}
+            </mt-tab-item>
+        </mt-tabbar>
+    </div>
+    <comment v-show="!showMain && showSubId === 'comment'"></comment>
+    <draft-detail v-show="!showMain && showSubId === 'bdcg'"></draft-detail>
+    <facility-detail v-show="!showMain && showSubId === 'facility'"></facility-detail>
+    <driving-license-search v-show="!showMain && showSubId === 'xszcx'"></driving-license-search>
+    <scan-driver-license v-show="!showMain && showSubId === 'jszcx'"></scan-driver-license>
+    <analyze v-if="!showMain && showSubId === 'clcx'"></analyze>
+    <app-case-report v-show="!showMain && showSubId === 'ajsb'"></app-case-report>
+    <patrol-search v-if="!showMain && showSubId ==='xccx'"></patrol-search>
+</div>

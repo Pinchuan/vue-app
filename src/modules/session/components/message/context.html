@@ -1,0 +1,28 @@
+<div class="m-message" v-scroll-bottom="sessionList" id="messageBox">
+    <ul>
+        <li>
+            <p class="time"><span>案件图片</span></p>
+            <div style="text-align: center;">
+                <img class="top-case-img" :id="'caseImage-'+window.caseId"  @click="enlargeCaseImg"/>
+            </div>
+        </li>
+        <li v-for="(item,index) in sessionList"  v-if="item.nodeType!=3">
+            <p class="time"><span>{{item.nodeCreateDate}}</span></p>
+            <div class="main" :class="{ self: item.dealUser ==user.userId }">
+                <img class="avatar" :src="getAvatar(item)"/>
+                <p class="name" v-if="item.name !=''">{{item.userOrgDP}}-{{item.name}}</p>
+                <div class="text" v-if="item.nodeType==0">{{item.nodeDetail}}</div>
+                <div class="text" v-if="item.nodeName=='起草'">您收到【突发事件】:由{{item.dealUser}}于{{item.nodeCreateDate}}创建，事件编号:{{item.caseNumber}}</div>
+                <div class="caseImg location-panel" v-if="item.nodeType==2">
+                    <a :href="'http://apis.map.qq.com/uri/v1/marker?marker=coord:'+ item.y + ',' + item.x + ';title:坐标信息;addr:'+ item.nodeDetail + '&referer=myapp'">
+                        <div class="address-panel">{{item.nodeDetail}}</div>
+                        <img class="chat-picture" :src="locationImage"/>
+                    </a>
+                </div>
+                <div class="caseImg" v-show="item.nodeType==1" @click="enLargeImg(item)">
+                    <img  class="chat-picture" :id="'flowImg-'+item.id" :src="getImageUrl(item)"/>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

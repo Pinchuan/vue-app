@@ -1,0 +1,15 @@
+.scan-container{
+    padding:.3rem;
+}
+.scan-result-detail{
+
+}
+.text-content-null{
+    text-align: center;
+}
+.text-content-null .icon{
+    font-size: 30px;
+}
+.text-content-null>p{
+    font-size: 16px;
+}

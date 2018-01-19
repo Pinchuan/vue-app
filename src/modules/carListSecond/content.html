@@ -1,0 +1,43 @@
+<div class="mainContent">
+   <mt-header fixed>
+      <mt-button icon="back" slot="left" @click="returnParent">返回</mt-button>
+   </mt-header>
+   <div class="water-info-body">
+      <div class="car-list-content clearfix">
+         <div class="hezhang-list-msg">
+            <p class="riverTitle"><i class="icon iconfont icon-cheliang"></i>车辆信息</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">车牌号码</p>
+            <p class="riverTitle float-right">{{carDetailList.truckNum}}</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">车辆终端编号</p>
+            <p class="riverTitle float-right">{{carDetailList.terminalNum}}</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">所属单位</p>
+            <p class="riverTitle float-right title-blue"><i class="icon iconfont icon-gongsi"></i>{{carDetailList.company}}</p>
+         </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">是否黑名单</p>
+              <p class="riverTitle float-right">{{carDetailList.inBlackList}}</p>
+          </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">车速</p>
+              <p class="riverTitle float-right">{{carDetailList.speed}}</p>
+          </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">方向</p>
+              <p class="riverTitle float-right">{{carDetailList.direction}}</p>
+          </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">最后获取时间</p>
+              <p class="riverTitle float-right">{{carDetailList.lastTime}}</p>
+          </div>
+      </div>
+       <div id="carMap" style="width: 100%;height: calc(100% - 6.4rem - 50px);">
+
+       </div>
+   </div>
+</div>

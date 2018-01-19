@@ -1,0 +1,44 @@
+<div class="mainContent">
+   <div v-show="!showPatrolSearchDetail">
+      <mt-header title="巡查列表" fixed>
+         <mt-button icon="back" slot="left" @click="returnHome">返回</mt-button>
+      </mt-header>
+      <div class="car-box-top">
+         <div class="newsBody cesc-mb-form clearfix">
+            <div class="text-content-null" v-if="caseLists.length<1">
+               <i class="icon iconfont icon-liebiao"></i>
+               <p>您还没有巡查上报</p>
+            </div>
+            <div class="wrapper" style="overflow: hidden;height: 12rem;" ref="wrapper">
+               <ul class="content-scroll" v-infinite-scroll="loadCarList"
+                  infinite-scroll-disabled = "noMoreData"
+                  infinite-scroll-distance="50">
+                  <li class="cesc-panels" v-for="(item,index) in caseLists" @click="openrDetail(item)">
+                     <div class="panel-list-msg">
+                        <p class="riverTitle">上报时间：</p>
+                        <p class="riverTitle">{{item.createDate}}</p>
+                     </div>
+                     <div class="panel-list-msg">
+                        <p class="riverTitle">案件名称：</p>
+                        <p class="riverTitle">{{item.createType}}</p>
+                     </div>
+                  </li>
+               </ul>
+               <div class="loader-gif" v-show="loading">
+                  <div class="loader-inner-gif ball-pulse">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <patrol-search-detail v-show="showPatrolSearchDetail" ref="patrolSearchDetail" :caseLists="caseLists"></patrol-search-detail>
+</div>

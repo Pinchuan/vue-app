@@ -1,0 +1,49 @@
+<div class="mainContent">
+   <mt-header fixed>
+      <mt-button icon="back" slot="left" @click="returnParent">返回</mt-button>
+   </mt-header>
+   <div class="water-info-body">
+      <div class="car-list-content case-list-content clearfix">
+         <div class="hezhang-list-msg">
+            <p class="riverTitle"><i class="icon iconfont icon-cheliang"></i>事件信息</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">事件编号</p>
+            <p class="riverTitle float-right">{{caseDetail.number}}</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">事件名称</p>
+            <p class="riverTitle float-right">{{caseDetail.name}}</p>
+         </div>
+         <div class="data-list-msg">
+            <p class="riverTitle">事件类型</p>
+            <p class="riverTitle float-right title-blue">{{caseDetail.createType}}</p>
+         </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">紧急程度</p>
+              <p class="riverTitle float-right">{{caseDetail.level}}</p>
+          </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">创建人</p>
+              <p class="riverTitle float-right">{{createUser}}</p>
+          </div>
+          <div class="data-list-msg">
+              <p class="riverTitle">事件地点</p>
+              <p class="riverTitle float-right">{{caseDetail.location}}</p>
+          </div>
+      </div>
+       <div class="mgb-10 clearfix">
+           <span class="m-label m-place-label">上传位置：</span>
+           <!--                <div  class="m-place-img" id="mobile-img" style="width: 100%;height: 16rem;">
+                           </div>-->
+           <div  class="m-place-img" id="caseMap" style="width: 100%;height: 4rem;">
+           </div>
+       </div>
+       <div class="clearfix">
+           <span class="m-label m-place-label">上传图片：</span>
+           <div class="uploadImg">
+               <img class="img_wrap" :src="caseImageUri">
+           </div>
+       </div>
+   </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="login">
+    <!--<div class="goBack"></div>
+    <div class="logo"></div>-->
+    <div class="loginBox">
+        <div class="userName">
+            <i class="user-icon"></i>
+            <input class="textInput" type="text" placeholder="请输入用户名" v-model="userName"/>
+        </div>
+        <div class='loginFail' v-show="loginFail">用户名或密码错误</div>
+        <div class="password">
+            <i class="psd-icon"></i>
+            <input class="textInput" type="password" placeholder="Password" v-model="password"/>
+        </div>
+        <a class="forgetPsd">忘记密码？</a>
+        <div class="login-btn" v-on:click="login">登录</div>
+        <!--<div class="registerBox">
+            <div class="skip">跳过</div>
+            <div class="register">注册</div>
+        </div>-->
+    </div>
+    <el-dialog
+            title="检查到新版本"
+            :visible.sync="needUpdate"
+            size="tiny"
+            show-close="false"
+            :before-close="handleClose">
+        <span>点击确认开始更新</span>
+        <span slot="footer" class="dialog-footer">
+    <el-button type="primary" @click="handleClose">确 定</el-button>
+  </span>
+    </el-dialog>
+
+</div>

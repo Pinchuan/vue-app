@@ -1,0 +1,60 @@
+<div class="mainContent uploadContent">
+    <div v-show="!showFacilityDetail">
+        <div class="map-work-top">
+            <div class="search-container" @click="showSeachForm">
+                <el-input placeholder="请输入内容" v-model="searchPoint" icon="search">
+                </el-input>
+            </div>
+            <div class="search-list" v-if="showList">
+                <ul>
+                    <li class="cesc-li-list" v-for="item in pollutionList" @click="showPointInMap(item)">
+                        <span class="icon iconfont icon-wurandian"></span>
+                        <span class="text-overflow-1">{{item.name}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-container-new" :class="{'show':isShow}">
+                <mt-header title="搜索污染源">
+                    <mt-button icon="back" slot="left" @click="hideSeachForm">返回</mt-button>
+                </mt-header>
+                <div style="margin-top: 10px">
+                    <el-input placeholder="请输入地址" v-model="address" icon="search">
+                    </el-input>
+                </div>
+                <div style="margin-top: 10px">
+                    <el-select v-model="pollutionSource" placeholder="请选择污染源">
+                        <el-option
+                                v-for="pollution in facilityTypeIds"
+                                :key="pollution.id"
+                                :label="pollution.nameCn"
+                                :value="pollution.id">
+                        </el-option>
+                    </el-select>
+                </div>
+                <div style="margin-top: 10px">
+                    <el-select v-model="district" placeholder="请选择所在区">
+                        <el-option
+                                v-for="area in areas"
+                                :key="area.value"
+                                :label="area.label"
+                                :value="area.value">
+                        </el-option>
+                    </el-select>
+                </div>
+                <mt-button style="margin-top: 10px" type="primary" size="large" @click="searchPollutionPoint">查询</mt-button>
+            </div>
+        </div>
+        <div id="mainMap" style="height: 100%;width: 100%;"></div>
+        <div class="left-bottom-legend">
+            <div class="control-toolbar" @click="openLegend()">
+                <i class="icon iconfont icon-zuobiao"></i>
+            </div>
+            <ul class="legend-group" :class="{isOpen:isOpen}">
+                <li v-for="legend in legendList">
+                    <i class="glyphicon" :class="legend.icon"></i>
+                    <p class="childType">{{legend.title}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

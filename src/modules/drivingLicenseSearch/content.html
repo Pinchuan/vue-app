@@ -1,0 +1,17 @@
+<div class="mainContent">
+   <div class="mainContent" v-show="!showSuccessDetail">
+      <mt-header title="行驶证信息查询" fixed>
+         <mt-button icon="back" slot="left" @click="returnMain">返回</mt-button>
+      </mt-header>
+      <div class="content">
+         <div class="scan-container">
+            <mt-button type="default" size="large" @click="scanCode()">点击扫描行驶证</mt-button>
+         </div>
+        <div class="scan-container">
+           <el-input class="mgb-10" v-model="searchLicenseId" placeholder="输入行驶证号码"></el-input>
+           <mt-button type="primary" size="large" @click="searchMsgByLicenseId()">获取行驶证信息</mt-button>
+        </div>
+      </div>
+   </div>
+   <driving-license-search-success v-show="showSuccessDetail"></driving-license-search-success>
+</div>

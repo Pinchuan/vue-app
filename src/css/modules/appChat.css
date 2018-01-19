@@ -1,0 +1,241 @@
+#chat{
+    background: #eee;
+}
+.bottom-operate-btn{
+    border-top:1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    height: 44px;
+    padding: 7px;
+    background: #F7F7F7;
+}
+.bottom-operate-btn .el-input{
+    width: 75%;
+}
+.bottom-operate-btn .el-input__inner{
+    height: 30px;
+}
+.main-content{
+    width: 100%;
+    height:100%;
+}
+.circle-icon{
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border:1px solid #ddd;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 30px;
+}
+.mgl-10{
+    margin-left: 10px!important;
+}
+.communicatePanel{
+    width: 100%;
+    height:100%;
+}
+.m-message {
+    padding: 10px 15px;
+    overflow-y: auto;
+    height:100%;
+}
+.communicatePanel .main {
+    overflow: hidden;
+}
+.communicatePanel .main-content{
+    padding-bottom: 50px;
+}
+#chat .m-message{
+    height:calc(100% - 44px);
+}
+.m-message li{
+    margin-bottom:10px;
+}
+.m-message .time {
+    margin: 7px 0;
+    text-align: center;
+}
+.m-message .time>span {
+    display: inline-block;
+    padding: 0 18px;
+    font-size: 9pt;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #dcdcdc;
+}
+#chat .main-content {
+    position: relative;
+    overflow: hidden;
+    background-color: #eee;
+}
+.m-message .avatar {
+    float: left;
+    margin: 0 10px 0 0;
+    border-radius: 3px;
+}
+.m-message .text {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    max-width: calc(100% - 55px);
+    min-height: 30px;
+    line-height: 1.5;
+    font-size: 9pt;
+    text-align: left;
+    word-break: break-all;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.m-message .text:before {
+    content: " ";
+    position: absolute;
+    top: 9px;
+    right: 100%;
+    border: 6px solid transparent;
+    border-right-color: #fff;
+}
+.send-btn{
+    display: inline-block;
+    height:28px;
+    line-height: 28px;
+    padding:0 5px;
+    background: rgb(32,160,255);
+    border-radius: 4px;
+    color:#fff;
+    margin-left: 5px;
+}
+.m-message .self .text {
+    background-color: #b2e281;
+}
+.m-message .self .text:before {
+    right: inherit;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: #b2e281;
+}
+.m-message .self {
+    text-align: right;
+}
+/*.m-message .name{*/
+/*font-size:12px;*/
+/*}*/
+img.avatar{
+    width: 40px;
+    height: 40px;
+}
+.m-message .self .avatar {
+    float: right;
+    margin: 0 0 0 10px;
+}
+.caseImg.location-panel{
+    position:relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.caseImg.location-panel .address-panel{
+
+    width: 100%;
+    border-radius: 5px;
+    height: .6rem;
+    line-height: .6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    padding: 0 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.m-message .caseImg .chat-picture{
+    width: 100%;
+}
+.m-message .caseImg {
+    width: 3rem;
+    display: inline-block;
+}
+.caseImg>img{
+    width: 100%;
+}
+.upload-btn{
+    position: relative;
+    overflow: hidden;
+}
+.upload-img{
+    position: absolute;
+    top:0;
+    opacity: 0;
+}
+input[type=file].el-upload__input{
+    display: none;
+}
+.top-case-img{
+    width: 4rem;
+}
+.people-group{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgb(36,160,255);
+    color: #fff;
+}
+.people-group .icon{
+    font-size: 2rem;
+}
+.group-detail{
+    padding-top: 40px;
+    padding-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+.group-detail .group-li{
+    padding-left: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+    width: 16.6%;
+}
+.group-container .mint-button{
+    margin-bottom:0;
+    margin-right:0;
+}
+.icon.icon-qun{
+    margin-right: 1rem;
+}
+.card-desc{
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+input[type=file].el-upload__input{
+    display: none;
+}
+.top-case-img{
+    width: 4rem;
+}
+.caseList{
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+.case-list-container{
+    margin-top: 40px;
+}
+.m-message{
+    margin-bottom: 40px;
+}

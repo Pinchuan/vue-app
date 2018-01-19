@@ -1,0 +1,60 @@
+<div class="mainContent">
+   <div v-show="!showCarListSecond">
+      <mt-header title="车辆监控" fixed>
+         <mt-button icon="back" slot="left" @click="returnHome">返回</mt-button>
+      </mt-header>
+      <div class="car-box-top">
+         <div class="newsBody cesc-mb-form clearfix">
+            <div class="cesc-hh">
+               <el-input
+                       placeholder="车牌号码"
+                       icon="search"
+                       v-model="carNum"
+                       :on-icon-click="searchCarByCarNum">
+               </el-input>
+            </div>
+            <div class="wrapper" style="overflow: hidden" ref="wrapper">
+               <!--<ul class="content">-->
+                  <!--<li class="cesc-lists" v-for="(item,index) in truckList" @click="openrCarsListInfo(item,index)">-->
+                     <!--<div class="data-list-msg">-->
+                        <!--<p class="list-title">{{item.truckNum}}</p>-->
+                        <!--<p class="list-title float-right">{{item.company}}&nbsp;<i class="el-icon-arrow-right"></i></p>-->
+                     <!--</div>-->
+                  <!--</li>-->
+               <!--</ul>-->
+               <ul class="content-scroll" v-infinite-scroll="loadCarList"
+                  infinite-scroll-disabled = "noMoreData"
+                  infinite-scroll-distance="50">
+                  <li class="cesc-lists" v-for="(item,index) in truckList" @click="openrCarsListInfo(item,index)">
+                     <div class="data-list-msg">
+                        <p class="list-title">{{item.truckNum}}</p>
+                        <p class="list-title float-right">{{item.company}}&nbsp;<i class="el-icon-arrow-right"></i></p>
+                     </div>
+                  </li>
+               </ul>
+               <div class="loader-gif" v-show="loading">
+                  <div class="loader-inner-gif ball-pulse">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--<div id="xunChaMap" style="width: 100%;height: calc(100% - 30px);"></div>-->
+      </div>
+   </div>
+
+   <!--<div class="analyze-box-bottom">-->
+      <!--<div class="analyze-title">-->
+         <!--<span>数据统计</span>-->
+      <!--</div>-->
+      <!--<div id="xunChaEcharts" style="width: 100%;height: calc(100% - 30px);"></div>-->
+   <!--</div>-->
+   <car-list-second v-show="showCarListSecond"></car-list-second>
+</div>

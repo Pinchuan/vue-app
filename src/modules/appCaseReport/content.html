@@ -1,0 +1,78 @@
+<div class="mainContent">
+    <div v-show="showQuestion">
+        <mt-header title="问题描述" fixed>
+            <mt-button icon="back" slot="left" @click="returnHome">返回</mt-button>
+        </mt-header>
+        <mt-actionsheet
+                :actions="actions"
+                v-model="sheetVisible"
+                :closeOnClickModal="false">
+        </mt-actionsheet>
+        <div class="m-form-box ons-css" style="margin-top: 40px">
+            <yd-cell-group>
+                <yd-cell-item>
+                    <span slot="left">事件编号：</span>
+                    <yd-input slot="right" v-model="number" :debug="true"></yd-input>
+                </yd-cell-item>
+                <yd-cell-item>
+                    <span slot="left">事件名称：</span>
+                    <yd-input slot="right" v-model="caseName" :debug="true" placeholder="请输入事件名称"></yd-input>
+                </yd-cell-item>
+                <yd-cell-item>
+                    <span slot="left">事件类型：</span>
+                    <el-select slot="right" v-model="caseTypes" placeholder="请输入事件类型" @change="selectChange">
+                        <el-option
+                                v-for="item in caseTypeOptions"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                        </el-option>
+                    </el-select>
+                </yd-cell-item>
+                <yd-cell-item>
+                    <span slot="left">紧急程度：</span>
+                    <el-select slot="right" v-model="caseLevel" placeholder="请选择">
+                        <el-option
+                                v-for="item in caseLevels"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                        </el-option>
+                    </el-select>
+                </yd-cell-item>
+                <yd-cell-item>
+                    <span slot="left">创建人：</span>
+                    <yd-input slot="right" v-model="createPerson" placeholder="请输入创建人" disabled></yd-input>
+                </yd-cell-item>
+                <yd-cell-item>
+                    <span slot="left">事件地点：</span>
+                    <yd-input slot="right" v-model="location" :debug="true" placeholder="请输入事件地点"></yd-input>
+                </yd-cell-item>
+            </yd-cell-group>
+            <div class="mgb-10 clearfix">
+                <span class="m-label m-place-label">上传位置：</span>
+                <!--                <div  class="m-place-img" id="mobile-img" style="width: 100%;height: 16rem;">
+                                </div>-->
+                <div  class="m-place-img" id="mobile-timg" style="width: 100%;height: 4rem;">
+                </div>
+            </div>
+            <div class="clearfix">
+                <span class="m-label m-place-label">上传图片：</span>
+                <div class="uploadImg"  v-show="imgVisible">
+                    <img class="img_wrap" :src="caseImageUri" @click="showDeleteBtn()">
+                    <span class="el-upload-list__item-actions upload-mask center-layout"
+                          v-show="isDeleteOprate">
+                        <i class="el-icon-delete" @click="reSet()"></i>
+                        </span>
+                </div>
+                <div class="el-upload el-upload--picture-card" @click="openActionSheet()" v-show="showAddBtn">
+                    <i class="el-icon-plus"></i>
+                </div>
+            </div>
+            <div class="clearfix mgt-10">
+                <mt-button type="primary" size="large" @click="sumbitMsg()">提交</mt-button>
+            </div>
+        </div>
+    </div>
+    <!--<app-submit-end></app-submit-end>-->
+</div>

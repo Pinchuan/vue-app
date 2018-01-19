@@ -1,0 +1,14 @@
+<div class="m-list">
+    <el-input
+            placeholder="搜索事件"
+            icon="search"
+            v-model="search"
+            :on-icon-click="searchCase">
+    </el-input>
+    <ul>
+        <li v-for="item in caseList" class="caseList" @click="select(item)" :title="item.name">
+            <img style="width: 30px;height: 30px;" :src="chatImg">
+            <span>{{item.name}}</span>
+        </li>
+    </ul>
+</div>

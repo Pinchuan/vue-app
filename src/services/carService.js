@@ -1,0 +1,42 @@
+define(['./serviceHelper'],function(serviceHelper){
+    return {
+        getTruckInfoList:function(terminalNum,cb,errorCb){
+            var parameter = {
+                id:'getTruckInfo',
+                parameter:{
+                    terminalNum:terminalNum
+                }
+            };
+            $.get(serviceHelper.getPath(parameter),function(result){
+                if(!!result){
+                    if(!!result.success){
+                        cb(result.data);
+                    }
+                }
+                else{
+                    errorCb(result);
+                }
+            });
+        },
+        getTruckListMsg:function(pageNumber,pageSize,name,cb,errorCb){
+            var parameter = {
+                id:'getTruckList',
+                parameter:{
+                    pageNumber:pageNumber,
+                    pageSize:pageSize,
+                    name:name
+                }
+            };
+            $.get(serviceHelper.getPath(parameter),function(result){
+                if(!!result){
+                    if(!!result.success){
+                        cb(result.data);
+                    }
+                }
+                else{
+                    errorCb(result);
+                }
+            });
+        },
+    }
+});

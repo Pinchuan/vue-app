@@ -1,0 +1,64 @@
+.cell-text-title{
+    border-left:3px solid #31b9f0;
+    padding-left: 10px;
+}
+.m-label{
+    font-size: .3rem;
+    line-height: 31px;
+    padding-left: 10px;
+    float: left;
+    text-align: right;
+}
+.m-file{
+    width: 65%;
+    float: left;
+}
+input.m-file{
+    display: inline-block;
+    vertical-align: middle;
+}
+.uploadImg{
+    width: 60%;
+    height: 3.5rem;
+    float: left;
+    position: relative;
+}
+.mgb-10{
+    margin-bottom: 10px;
+}
+.img_wrap{
+    width: 100%;
+    height:100%;
+}
+.cesc-delete-icon{
+
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+    .m-label{
+        width: 8.5rem;
+    }
+}
+.upload-img-area {
+    padding-top: .24rem;
+    padding-bottom: .24rem;
+}
+
+img[src=''] {
+    opacity: 0;
+}
+
+.upload-mask.center-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+.mgt-10{
+    margin-top: 10px;
+}
+.cesc-cell{
+    background: #fff;
+}
+.cesc-cell + .cesc-cell{
+    border-top: 1px solid #ddd;
+}

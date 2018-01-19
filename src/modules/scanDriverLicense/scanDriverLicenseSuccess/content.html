@@ -1,0 +1,26 @@
+<div class="mainContent">
+   <div class="mainContent" v-show="!showDetailInfo">
+      <mt-header title="行驶证信息信息" fixed>
+         <mt-button icon="back" slot="left" @click="returnMain">返回</mt-button>
+      </mt-header>
+      <div class="content">
+         <div class="scan-result-detail">
+            <a class="mint-cell cell-top">
+               <div class="mint-cell-wrapper">
+                  <div class="mint-cell-title">
+                     <i class="icon iconfont icon-xinxi"></i>
+                     <span class="mint-cell-text">驾驶证信息</span>
+                  </div>
+               </div>
+            </a>
+            <yd-cell-group>
+               <yd-cell-item v-for="item in driverInfo">
+                  <span slot="left">{{item.title}}</span>
+                  <span slot="right">{{item.value}}</span>
+               </yd-cell-item>
+            </yd-cell-group>
+         </div>
+      </div>
+   </div>
+   <detail-info v-show="showDetailInfo"></detail-info>
+</div>

@@ -1,0 +1,22 @@
+<transition name="right-panel">
+    <div class="communicatePanel">
+        <div class="main-content" style="overflow: hidden;">
+            <mt-header :title="sessionTitle" fixed v-if="showCaseSession">
+            </mt-header>
+            <mt-header :title="sessionTitle" fixed v-if="!showCaseSession">
+                <mt-button icon="back" slot="left" @click="returnMain">返回</mt-button>
+            </mt-header>
+            <ul class="case-list-container" v-show="showCaseSession">
+                <li v-for="item in this.newCaseList" class="caseList" @click="select(item)" :title="item.emergencyCase.name">
+                    <img style="width: 30px;height: 30px;" :src="chatImg">
+                    <span>{{item.emergencyCase.name}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content" style="overflow: hidden;" v-show="!showCaseSession">
+            <message :sessionList="sessionList" :user="user" :users="users" id="messageBox"></message>
+            <m-text ></m-text>
+        </div>
+        <div v-if="enLargeImgShow" class="zoomify-shadow zoomed" style="transition: all 2000ms linear;"></div>
+    </div>
+</transition>

@@ -1,0 +1,29 @@
+<div class="mainContent">
+   <div v-show="!showUserDetail && !showPwdPanel">
+      <div class="user-top">
+         <div class="user-label">
+            <img class="user-img" :src="userInfo.userPhoto" alt="" width="48" height="48">
+            <span class="user-info">
+               <p class="user-name">{{userInfo.name}}</p>
+               <p class="user-badge">{{userInfo.role}}</p>
+            </span>
+         </div>
+         <!--<div class="register-label" :class="{locationBtn:(!isRegister)}" @click="dailyRegister">{{regText}}</div>-->
+      </div>
+      <div class="mgt-10">
+         <div class="cesc-cell" @click="changePassword()">
+            <yd-cell-item arrow>
+               <span slot="left" >修改密码</span>
+            </yd-cell-item>
+         </div>
+         <div class="cesc-cell">
+            <yd-cell-item arrow>
+               <span slot="left">软件版本</span>
+               <span slot="right">已是最新版本&nbsp;&nbsp;&nbsp;&nbsp;v1.0</span>
+            </yd-cell-item>
+         </div>
+      </div>
+   </div>
+    <user-msg-detail v-show="showUserDetail"></user-msg-detail>
+   <user-password-change v-show="showPwdPanel"></user-password-change>
+</div>

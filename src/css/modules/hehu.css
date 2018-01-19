@@ -1,0 +1,47 @@
+.cesc-hh .el-select{
+    width: 100%;
+}
+.cesc-hh .yd-cell-box{
+    margin-bottom: 0;
+}
+.cesc-hh  .el-select .el-input__inner {
+    border: none;
+    height: 1rem;
+    border-radius: 0;
+}
+.car-list-content {
+    height: 6.4rem;
+    border-bottom: 1px solid #26a2ff;
+    background: #fff;
+    padding-left:.3rem;
+    padding-right:.3rem;
+    border-bottom: 1px solid #ddd;
+}
+.riverTitle{
+    font-size: .3rem;
+    display: inline-block;
+}
+.list-title{
+    font-size: .2rem;
+    display:inline-block;
+}
+.car-list-content .data-list-msg{
+    width: 100%;
+}
+.car-list-content .el-icon-arrow-right{
+    color:#ccc;
+}
+.car-list-content .data-list-msg{
+    border-bottom: 1px solid #ddd;
+}
+.car-list-content .data-list-msg:last-child{
+    border-bottom: none;
+}
+.hezhang-list-msg,.title-blue{
+    color: #26a2ff;
+}
+.car-list-content .hezhang-list-msg,.car-list-content .data-list-msg{
+    height:.8rem;
+    line-height: .8rem;
+}
+

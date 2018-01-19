@@ -1,0 +1,16 @@
+<div class="mainContent">
+    <div>
+        <mt-header :title="facilityName" fixed>
+            <mt-button icon="back" slot="left" @click="returnBack">返回</mt-button>
+        </mt-header>
+        <div class="m-form-box ons-css" style="margin-top: 40px">
+            <yd-cell-group>
+                <yd-cell-item v-for="facility in facilityList">
+                    <span slot="left">{{facility.name}}</span>
+                    <span slot="right">{{facility.value}}</span>
+                </yd-cell-item>
+            </yd-cell-group>
+        </div>
+    </div>
+    <!--<app-submit-end></app-submit-end>-->
+</div>

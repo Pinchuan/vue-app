@@ -1,0 +1,29 @@
+<!--<div class="m-text">-->
+<!--<textarea placeholder="按 Ctrl + Enter 发送" v-model="text" @keyup="inputing"></textarea>-->
+<!--</div>-->
+<div class="bottom-operate-btn">
+    <el-input v-model="text" @change="changeInput()"></el-input>
+    <i class="circle-icon iconfont icon-wurandian" @click="getLocation()"></i>
+    <el-upload
+            v-if="!showSendBtn"
+            class="mgl-10 upload-demo"
+            ref="upload"
+            :data="uploadParm"
+            :action="uploadUrl"
+            :file-list="uploadFiles"
+            :before-upload="beforeUpload"
+            :on-remove="remove"
+            :on-change="change"
+            :on-success="success"
+            :on-error="error"
+            :auto-upload="false"
+            list-type="picture"
+            limit="1">
+        <div class=" el-icon-plus circle-icon upload-btn">
+        </div>
+    </el-upload>
+    <!--<div class=" mgl-10 el-icon-plus circle-icon upload-btn"  v-if="!showSendBtn">-->
+    <!--<input type="file" multiple class="upload-img" accept="image/*" @change="">-->
+    <!--</div>-->
+    <span class="send-btn" v-if="showSendBtn" @click="sendMsg()">发送</span>
+</div>
